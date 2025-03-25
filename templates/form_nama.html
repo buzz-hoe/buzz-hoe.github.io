@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Nama dan Kelas</title>
+    <style>
+        body {
+            background-image: url('/static/images/bendera.jpg'), url('/static/images/pancasila.jpg');
+            background-size: cover, contain;
+            background-position: center, top right;
+            background-repeat: no-repeat, no-repeat;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Identitas</h1>
+        <form method="POST">
+            <input type="text" name="nama" placeholder="Nama" required>
+            <input type="text" name="kelas" placeholder="Kelas" required>
+            <button type="submit">Selanjutnya</button>
+        </form>
+    </div>
+</body>
+</html>

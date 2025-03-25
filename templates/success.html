@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Sukses</title>
+    <style>
+        body {
+            background-image: url('/static/images/bendera.jpg'), url('/static/images/pancasila.jpg');
+            background-size: cover;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 600px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .glitch {
+            position: relative;
+            color: #00ff00;
+            font-size: 1.2em;
+            animation: glitch 1s infinite;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            clip: rect(0, 900px, 0, 0);
+        }
+        .glitch::before {
+            animation: glitchTop 1s infinite;
+            top: -2px;
+            left: 2px;
+            color: #ff00ff;
+        }
+        .glitch::after {
+            animation: glitchBottom 1s infinite;
+            top: 2px;
+            left: -2px;
+            color: #00ffff;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        @keyframes glitchTop {
+            0% { clip: rect(0, 900px, 0, 0); }
+            20% { clip: rect(0, 900px, 20px, 0); }
+            40% { clip: rect(0, 900px, 0, 0); }
+            60% { clip: rect(0, 900px, 20px, 0); }
+            80% { clip: rect(0, 900px, 0, 0); }
+            100% { clip: rect(0, 900px, 20px, 0); }
+        }
+        @keyframes glitchBottom {
+            0% { clip: rect(0, 900px, 0, 0); }
+            20% { clip: rect(20px, 900px, 40px, 0); }
+            40% { clip: rect(0, 900px, 0, 0); }
+            60% { clip: rect(20px, 900px, 40px, 0); }
+            80% { clip: rect(0, 900px, 0, 0); }
+            100% { clip: rect(20px, 900px, 40px, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pendaftaran Sukses</h1>
+        <p class="glitch" data-text="Nama: {{ nama }}">Nama: {{ nama }}</p>
+        <p class="glitch" data-text="Kelas: {{ kelas }}">Kelas: {{ kelas }}</p>
+        <p class="glitch" data-text="Divisi: {{ divisi }}">Divisi: {{ divisi }}</p>
+        <p class="glitch" data-text="Alasan: {{ alasan }}">Alasan: {{ alasan }}</p>
+    </div>
+</body>
+</html>
